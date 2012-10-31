@@ -14,8 +14,11 @@ After installing the plugin, you can use the following syntax in a Redmine page
 to embed the gist located at https://gist.github.com/1174028:
 
 If you like to type out Gist IDs: {{gist(1174028)}} 
+
 Embed just a specific file: {{gist(1174028,example1.rb)}} 
+
 If you prefer to copy and paste: {{gist(https://gist.github.com/1174028)}}
+
 And with a filename: {{gist(https://gist.github.com/1174028#example1.rb)}}
 
 == License
