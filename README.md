@@ -28,6 +28,7 @@ Notes
 -----
 
 Currently Gist doesn't seem to support embedding private Gists. Too bad!
+Tested on Redmine 1.2.1, though should probably work with newer versions too.
 
 License
 -------
