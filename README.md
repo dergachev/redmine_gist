@@ -13,21 +13,35 @@ Installation
 Usage
 -----
 
-After installing the plugin, you can use the following syntax in a Redmine page
-to embed the gist located at https://gist.github.com/1174028:
+Redmine plugin adding a {{gist}} macro that embeds Github Gists into Redmine.
 
-If you like to type out Gist IDs: {{gist(1174028)}} 
+After installing the plugin, you can use the following syntax in a Redmine page to embed the gist located at https://gist.github.com/4033291:
 
-Embed just a specific file: {{gist(1174028,example1.rb)}} 
+If you like to type out Gist IDs, possibly with a specific file: 
 
-If you prefer to copy and paste: {{gist(https://gist.github.com/1174028)}}
+* !{{gist(4033291)}} 
+* !{{gist(4033291,example1.rb)}}
 
-And with a filename: {{gist(https://gist.github.com/1174028#example1.rb)}}
+Private gists work too:
+
+* !{{gist(https://gist.github.com/28c72d38da181f38bbb9)}}
+
+An alternative syntax is provided if you'd like to just paste in the Gist URL:
+
+* !{{gist(https://gist.github.com/4033291)}}
+
+Be careful about using the URL syntax when embedding specific files. If the
+filename has any capital letters (eg "README.md"), the gist URL will downcase
+them ("https://gist.github.com/4033291#file_readme.md"), which breaks the
+embedding logic, which needs to extracting the original filename. Instead,
+provide the filename as second argument:
+
+* !{{{gist(https://gist.github.com/4033291,README.md)}}
+
 
 Notes
 -----
 
-Currently Gist doesn't seem to support embedding private Gists. Too bad!
 Tested on Redmine 1.2.1, though should probably work with newer versions too.
 
 License
