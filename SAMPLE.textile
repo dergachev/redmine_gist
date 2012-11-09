@@ -1,0 +1,26 @@
+h1. Embed Gist
+
+Redmine plugin adding a {{gist}} macro that embeds Github Gists into Redmine.
+
+After installing the plugin, you can use the following syntax in a Redmine page to embed the gist located at https://gist.github.com/40
+33291:
+
+If you like to type out Gist IDs, possibly with a specific file: !{{gist(4033291)}}  
+
+{{gist(4033291)}} 
+
+With a file: !{{gist(4033291,README.md)}}
+
+{{gist(4033291,README.md)}}
+
+Private gists work too: !{{gist(28c72d38da181f38bbb9)}}
+
+{{gist(28c72d38da181f38bbb9)}}
+
+An alternative syntax is provided if you'd like to just paste in the Gist URL: !{{gist(https://gist.github.com/4033291)}}
+
+{{gist(https://gist.github.com/4033291)}}
+
+URL With explicit filename: !{{gist(https://gist.github.com/4033291,README.md)}}
+
+{{gist(https://gist.github.com/4033291,README.md)}}
