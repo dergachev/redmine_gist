@@ -1,5 +1,5 @@
-Gist Plugin
-===========
+Gist Embed Redmine Plugin
+=========================
 
 Redmine plugin adding a {{gist}} macro that embeds Github Gists into Redmine.
 
