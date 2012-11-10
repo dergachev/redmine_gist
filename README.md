@@ -8,10 +8,10 @@ Usage
 
 Redmine plugin adding a {{gist}} macro that embeds Github Gists into Redmine.
 
-After installing the plugin, you can use the following syntax in a Redmine page to embed the gist located at 
-
 To embed a public gist: https://gist.github.com/4033291: `{{gist(4033291)}}` 
+
 Or just a specific file: `{{gist(4033291,example1.rb)}}`
+
 Private gists work too: `{{gist(https://gist.github.com/28c72d38da181f38bbb9)}}`
 
 Or if you prefer copying and pasting the URL: `{{gist(https://gist.github.com/4033291)}}`
