@@ -3,6 +3,12 @@ Gist Plugin
 
 Redmine plugin adding a {{gist}} macro that embeds Github Gists into Redmine.
 
+More info
+----------
+![Screenshot](http://dl-web.dropbox.com/u/29440342/screenshots/Screen%20Shot%202012-11-09%20at%206.53.36%20PM.png)
+
+If you'd like to have a wiki page documenting this plugin, see USAGE.textile.
+
 Installation
 ------------
 
