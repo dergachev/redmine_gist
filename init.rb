@@ -1,28 +1,23 @@
 require 'redmine'
 
 Redmine::Plugin.register :redmine_gist do
-  name 'Redmine Gist embed'
+  name 'Gist Embed'
   author 'Alex Dergachev'
   description 'Defines macro to embed Github Gists into Redmine'
   version '0.1.0'
 
   Redmine::WikiFormatting::Macros.register do
     desc "Embed snippet from gist.github.com. Usage:\n\n  !{{gist(4033291,README.md)}} or !{{gist(url)}}\n\n" +
-         "Example: \n\n  !{{gist(1174028)}}\n\n" + 
-         "Example: \n\n  !{{gist(1174028,example1.rb)}}\n\n" + 
-         "Example: \n\n  !{{gist(https://gist.github.com/1174028#example1.rb)}}\n\n"
+         "Example: \n\n  !{{gist(4033291)}}\n\n" + 
+         "Example: \n\n  !{{gist(4033291,README.md)}}\n\n" + 
+         "Example: \n\n  !{{gist(28c72d38da181f38bbb9)}}\n\n" + 
+         "Example: \n\n  !{{gist(https://gist.github.com/4033291)}}\n\n" +
+         "Example: \n\n  !{{gist(https://gist.github.com/4033291,README.md)}}\n\n"
     macro :gist do |obj, args|
       return if args.empty?
 
-      # Public multifile gist: https://gist.github.com/4033291
-      # Private multifile gist: https://gist.github.com/28c72d38da181f38bbb9
-
-      # URL to README.md in a public multifile: https://gist.github.com/4033291#file_readme.md
-
-
       matches = args[0].match('https://gist\.github\.com/([a-zA-Z0-9]+)(#file_([^">]+))?');
       if matches
-# raise [args].to_yaml
         args[0] = matches[1]
         # XXX: README.md is represented as "https://gist.github.com/4033291#file_readme.md".
         #   The lowercasing makes it impossible to extract the original filename,
@@ -49,7 +44,6 @@ Redmine::Plugin.register :redmine_gist do
       
       GIST = args[0] 
       FILE = args[1].blank? ? '' : '?file=' + args[1]
-
 
       output = javascript_tag(nil, :src=>"http://gist.github.com/#{GIST}.js#{FILE}") 
       return output.html_safe
