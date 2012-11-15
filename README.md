@@ -20,7 +20,7 @@ Be careful about using the URL syntax when embedding specific files. If the
 filename has any capital letters (eg "README.md"), the permalink gist generates will downcase
 the filename (eg "https://gist.github.com/4033291#file_readme.md"), preventing the plugin
 from extracting the original filename and breaking the embedding. Instead,
-provide the filename as second argument: `{{{gist(https://gist.github.com/4033291,README.md)}}`
+provide the filename as second argument: `{{gist(https://gist.github.com/4033291,README.md)}}`
 
 Installation
 ------------
