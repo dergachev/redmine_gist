@@ -45,7 +45,7 @@ Redmine::Plugin.register :redmine_gist do
       GIST = args[0] 
       FILE = args[1].blank? ? '' : '?file=' + args[1]
 
-      output = javascript_tag(nil, :src=>"http://gist.github.com/#{GIST}.js#{FILE}") 
+      output = javascript_tag(nil, :src=>"https://gist.github.com/#{GIST}.js#{FILE}") 
       return output.html_safe
     end
   end
