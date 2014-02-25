@@ -3,6 +3,7 @@ require 'redmine'
 Redmine::Plugin.register :redmine_gist do
   name 'Gist Embed'
   author 'Alex Dergachev'
+  url 'https://github.com/dergachev/redmine_gist'
   description 'Defines macro to embed Github Gists into Redmine'
   version '0.1.0'
 
