@@ -13,11 +13,12 @@ Redmine::Plugin.register :redmine_gist do
          "Example: \n\n  !{{gist(4033291,README.md)}}\n\n" + 
          "Example: \n\n  !{{gist(28c72d38da181f38bbb9)}}\n\n" + 
          "Example: \n\n  !{{gist(https://gist.github.com/4033291)}}\n\n" +
-         "Example: \n\n  !{{gist(https://gist.github.com/4033291,README.md)}}\n\n"
+         "Example: \n\n  !{{gist(https://gist.github.com/4033291,README.md)}}\n\n" +
+         "Example: \n\n  !{{gist(https://gist.github.com/dergachev/f484fb3cf479e5fab776)}}\n\n"
     macro :gist do |obj, args|
       return if args.empty?
 
-      matches = args[0].match('https://gist\.github\.com/([a-zA-Z0-9]+)(#file_([^">]+))?');
+      matches = args[0].match('https://gist\.github\.com/(?:[a-zA-Z0-9]+/)?([a-zA-Z0-9]+)(#file_([^">]+))?');
       if matches
         args[0] = matches[1]
         # XXX: README.md is represented as "https://gist.github.com/4033291#file_readme.md".
